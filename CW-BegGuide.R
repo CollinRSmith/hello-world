@@ -1,3 +1,5 @@
+#Practice for Part 4: Painless Data Visualization
+
 data()
 tail(LakeHuron, 20)
 tail(Indometh, 20)
@@ -148,3 +150,14 @@ barplot(BOD$demand, col="royalblue3")
 
 testscores <- c(96, 71, 85, 92, 82, 78, 72, 81, 68, 61, 78, 86, 90)
 barplot(testscores, col="blue")
+testcolors <- ifelse(testscores >=80,"blue","red")
+barplot(testscores,col=testcolors, main="Test Scores", ylim=c(0,100),las=1)
+testscores_sorted <- sort(testscores, decreasing=TRUE)
+barplot(testscores_sorted,col=ifelse(testscores_sorted >= 80,"blue","red"), main="Test Scores", ylim=c(0,100),last=1)
+qplot(factor(cyl), data=mtcars, geom="bar", fill=factor(cyl))
+
+jpeg("myplot.jpg",width=350,height=420)
+barplot(BOD$demand,col=rainbow(6))
+dev.off
+
+ggsave("myplot2.jpg")
