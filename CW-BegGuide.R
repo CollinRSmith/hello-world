@@ -127,3 +127,24 @@ qplot(mtcars$cyl)
 qplot(factor(mtcars$cyl))
 ggplot(mtcars, aes(factor(cyl))) + geom_bar()
 
+hist(mtcars$mpg, breaks=7)
+names(mtcars)
+qplot(hp,data=mtcars,binwidth=50)
+ggplot(mtcars, aes(x=hp)) + geom_histogram(binwidth = 25)
+
+boxplot(mtcars$mpg)
+boxplot(diamonds$x,diamonds$y,diamonds$z)
+
+colours()
+rainbow(7)
+heat.colors(5)
+terrain.colors(12)
+topo.colors(6)
+cm.colors(8)
+?rainbow
+ggplot(mtcars, aes(x=factor(cyl))) + geom_bar(fill = rainbow(length(levels(factor(mtcars$cyl)))))
+barplot(BOD$demand, col=rainbow(6))
+barplot(BOD$demand, col="royalblue3")
+
+testscores <- c(96, 71, 85, 92, 82, 78, 72, 81, 68, 61, 78, 86, 90)
+barplot(testscores, col="blue")
